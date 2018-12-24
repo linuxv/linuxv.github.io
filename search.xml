@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F12%2F24%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[centos部署hexo+github+next主题博客]]></title>
     <url>%2F2018%2F12%2F24%2Fcentos%E9%83%A8%E7%BD%B2hexo-github-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[test]]></content>
+    <content type="text"><![CDATA[准备工作 系统环境centos7 用邮箱注册github帐号1.安装Node.js 下载进入node.js官网找到最新版本，复制下载链接，下面以11.5.0版本为例 1wget https://nodejs.org/dist/v11.5.0/node-v11.5.0-linux-x64.tar.xz 解压 1tar -xvJf node-v11.5.0-linux-x64.tar.xz #大写J 重命令文件夹并移动文件夹到/usr/local/node目录下 1mv node-v11.5.0-linux-x64.tar.xz /usr/local/node/node 配置环境变量 12echo "export PATH=$PATH:/usr/local/node/bin" &gt;&gt; /etc/profilesource /etc/profile 2.安装Hexo12345mkdir hexocd hexoyum install git-core #安装git，已安装可跳过npm install -g hexo-cli #安装Hexohexo init #初始化Hexo 3.安装Hexo插件12345678910111213npm install hexo-generator-index --savenpm install hexo-generator-archive --savenpm install hexo-generator-category --savenpm install hexo-generator-tag --savenpm install hexo-server --savenpm install hexo-deployer-git --savenpm install hexo-deployer-heroku --savenpm install hexo-deployer-rsync --savenpm install hexo-deployer-openshift --savenpm install hexo-renderer-marked --savenpm install hexo-renderer-stylus --savenpm install hexo-generator-feed --savenpm install hexo-generator-sitemap --save 5.部署github 1.配置本机全局git环境，已配置可跳过12git config --global user.email "注册github的邮箱帐号"git config --global user.name "github用户名" 2.生成ssh密钥 12ssh-keygen -t rsa -C 注册github的邮箱帐号less ~/.ssh/id_rsa.pub #查看ssh公钥，并手动复制 3.创建仓库进入github官网登陆github帐号，创建一个仓库，仓库名称必须为： 用户名.github.io 4.添加ssh密钥到github点击链接https://github.com/settings/ssh 在key输入框粘贴刚才复制的ssh密钥，Title 随便填。 6.修改Hexo配置文件1vim _config.yml #按照以下代码修改文件底端,将username替换成自己的github用户名1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: git@github.com:username/username.github.io.git branch: master message: '站点更新:&#123;&#123;now("YYYY-MM-DD HH/mm/ss")&#125;&#125;' 7.编译并上传代码到github仓库12hexo g #编译hexo d #上传 至此打开浏览器输入你的github仓库名就可访问到你的博客了。下一篇文章将会将如何切换主题以及主题优化]]></content>
       <tags>
         <tag>centos</tag>
         <tag>博客</tag>
         <tag>github</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F12%2F24%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
