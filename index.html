@@ -545,7 +545,7 @@
                 
               
 
-              <time title="Created: 2018-12-24 19:12:43 / Modified: 21:38:42" itemprop="dateCreated datePublished" datetime="2018-12-24T19:12:43+08:00">2018-12-24</time>
+              <time title="Created: 2018-12-24 19:12:43 / Modified: 21:45:05" itemprop="dateCreated datePublished" datetime="2018-12-24T19:12:43+08:00">2018-12-24</time>
             
 
             
@@ -584,47 +584,21 @@
 
       
         
-          
-            <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+          <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
 <li>系统环境centos7</li>
-<li>用邮箱注册github帐号<h4 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h4></li>
-<li><p>下载<br>进入<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官网</a>找到最新版本，复制下载链接，下面以11.5.0版本为例</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v11.5.0/node-v11.5.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvJf node-v11.5.0-linux-x64.tar.xz <span class="comment">#大写J</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重命令文件夹并移动文件夹到/usr/local/node目录下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v11.5.0-linux-x64.tar.xz  /usr/<span class="built_in">local</span>/node/node</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"export PATH=<span class="variable">$PATH</span>:/usr/local/node/bin"</span> &gt;&gt; /etc/profile</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">yum install git-core <span class="comment">#安装git，已安装可跳过</span></span><br><span class="line">npm install -g hexo-cli <span class="comment">#安装Hexo</span></span><br><span class="line">hexo init <span class="comment">#初始化Hexo</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-安装Hexo插件"><a href="#3-安装Hexo插件" class="headerlink" title="3.安装Hexo插件"></a>3.安装Hexo插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<h4 id="5-部署github"><a href="#5-部署github" class="headerlink" title="5.部署github"></a>5.部署github</h4><ul>
-<li>1.配置本机全局git环境，已配置可跳过<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"注册github的邮箱帐号"</span></span><br><span class="line">git config --global user.name <span class="string">"github用户名"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>2.生成ssh密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 注册github的邮箱帐号</span><br><span class="line">less ~/.ssh/id_rsa.pub <span class="comment">#查看ssh公钥，并手动复制</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.创建仓库<br>进入github官网登陆github帐号，创建一个仓库，仓库名称必须为： 用户名.github.io</p>
-</li>
-<li><p>4.添加ssh密钥到github<br>点击链接<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a> 在key输入框粘贴刚才复制的ssh密钥，Title 随便填。</p>
-</li>
-</ul>
-<h4 id="6-修改Hexo配置文件"><a href="#6-修改Hexo配置文件" class="headerlink" title="6.修改Hexo配置文件"></a>6.修改Hexo配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
-<p>#按照以下代码修改文件底端,将username替换成自己的github用户名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: <span class="string">'站点更新:&#123;&#123;now("YYYY-MM-DD HH/mm/ss")&#125;&#125;'</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="7-编译并上传代码到github仓库"><a href="#7-编译并上传代码到github仓库" class="headerlink" title="7.编译并上传代码到github仓库"></a>7.编译并上传代码到github仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#编译</span></span><br><span class="line">hexo d <span class="comment">#上传</span></span><br></pre></td></tr></table></figure>
-<p>至此打开浏览器输入你的github仓库名就可访问到你的博客了。下一篇文章将会将如何切换主题以及主题优化</p>
-
+<li>用邮箱注册github帐号
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/12/24/centos部署hexo-github-next主题博客/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
 
     
 
