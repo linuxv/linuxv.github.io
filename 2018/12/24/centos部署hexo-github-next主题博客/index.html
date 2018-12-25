@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="Aoldiot">
 <meta property="og:description" content="准备工作">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-24T13:56:41.925Z">
+<meta property="og:updated_time" content="2018-12-25T06:21:00.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos部署hexo+github+next主题博客">
 <meta name="twitter:description" content="准备工作">
@@ -403,12 +403,24 @@
                 
               
 
-              <time title="Created: 2018-12-24 19:12:43 / Modified: 21:56:41" itemprop="dateCreated datePublished" datetime="2018-12-24T19:12:43+08:00">2018-12-24</time>
+              <time title="Created: 2018-12-24 19:12:43" itemprop="dateCreated datePublished" datetime="2018-12-24T19:12:43+08:00">2018-12-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-25 14:21:00" itemprop="dateModified" datetime="2018-12-25T14:21:00+08:00">2018-12-25</time>
               
             
           </span>
@@ -459,7 +471,7 @@
 </li>
 </ul>
 <h4 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">yum install git-core               <span class="comment">#安装git，已安装可跳过</span></span><br><span class="line">npm install -g hexo-cli            <span class="comment">#安装Hexo</span></span><br><span class="line">hexo init <span class="comment">#初始化Hexo</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-安装Hexo插件"><a href="#3-安装Hexo插件" class="headerlink" title="3.安装Hexo插件"></a>3.安装Hexo插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装Hexo插件-安装报错，安装慢请点击这里"><a href="#3-安装Hexo插件-安装报错，安装慢请点击这里" class="headerlink" title="3.安装Hexo插件 安装报错，安装慢请点击这里"></a>3.安装Hexo插件 安装报错，安装慢请点击<a href="https://linuxv.github.io/2018/12/25/npmz%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E4%BB%A3%E7%90%86/#more" target="_blank" rel="noopener">这里</a></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
 <h4 id="5-部署github"><a href="#5-部署github" class="headerlink" title="5.部署github"></a>5.部署github</h4><ul>
 <li>1.配置本机全局git环境，已配置可跳过<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"example@exp.com"</span>            <span class="comment">#注册github的邮箱帐号</span></span><br><span class="line">git config --global user.name <span class="string">"username"</span>                    <span class="comment">#github用户名</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -661,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">1.安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">2.安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装Hexo插件"><span class="nav-number">4.</span> <span class="nav-text">3.安装Hexo插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-部署github"><span class="nav-number">5.</span> <span class="nav-text">5.部署github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改Hexo配置文件"><span class="nav-number">6.</span> <span class="nav-text">6.修改Hexo配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-编译并上传代码到github仓库"><span class="nav-number">7.</span> <span class="nav-text">7.编译并上传代码到github仓库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">1.安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">2.安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装Hexo插件-安装报错，安装慢请点击这里"><span class="nav-number">4.</span> <span class="nav-text">3.安装Hexo插件 安装报错，安装慢请点击这里</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-部署github"><span class="nav-number">5.</span> <span class="nav-text">5.部署github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改Hexo配置文件"><span class="nav-number">6.</span> <span class="nav-text">6.修改Hexo配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-编译并上传代码到github仓库"><span class="nav-number">7.</span> <span class="nav-text">7.编译并上传代码到github仓库</span></a></li></ol></div>
             
 
           </div>
