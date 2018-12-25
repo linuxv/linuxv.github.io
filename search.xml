@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[npmz设置淘宝代理]]></title>
+    <title><![CDATA[npm设置淘宝代理]]></title>
     <url>%2F2018%2F12%2F25%2Fnpm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E4%BB%A3%E7%90%86%2F</url>
     <content type="text"><![CDATA[淘宝npm官网 原理更改npm源为淘宝源 1npm install -g cnpm --registry=https://registry.npm.taobao.org 使用方法和npm一致，只需要将npm改为cnpm即可。]]></content>
       <tags>
