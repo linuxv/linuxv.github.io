@@ -104,20 +104,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Aoldiot">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="实验环境">
+<meta name="keywords" content="RAID,磁盘阵列,数据安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAID磁盘阵列">
+<meta property="og:url" content="http://yoursite.com/2018/12/26/RAID磁盘阵列/index.html">
 <meta property="og:site_name" content="Aoldiot">
+<meta property="og:description" content="实验环境">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/RAID.png">
+<meta property="og:updated_time" content="2018-12-26T12:44:58.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aoldiot">
+<meta name="twitter:title" content="RAID磁盘阵列">
+<meta name="twitter:description" content="实验环境">
+<meta name="twitter:image" content="http://yoursite.com/img/RAID.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/26/RAID磁盘阵列/">
 
 
 
@@ -127,7 +134,7 @@
   };
 </script>
 
-  <title>Aoldiot</title>
+  <title>RAID磁盘阵列 | Aoldiot</title>
   
 
 
@@ -175,8 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,7 +220,7 @@
         
         
           
-          <li class="menu-item menu-item-主页 menu-item-active">
+          <li class="menu-item menu-item-主页">
 
     
     
@@ -339,9 +345,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -373,10 +379,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/26/RAID磁盘阵列/" class="post-title-link" itemprop="url">RAID磁盘阵列</a>
+          <h1 class="post-title" itemprop="name headline">RAID磁盘阵列
+
               
             
           </h1>
@@ -421,6 +425,13 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -439,18 +450,21 @@
       
 
       
-        
-          <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/26/RAID磁盘阵列/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
+        <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><a id="more"></a>
+<p><img src="/img/RAID.png" alt=""></p>
+<h3 id="实验一-磁盘阵列RAID10"><a href="#实验一-磁盘阵列RAID10" class="headerlink" title="实验一.磁盘阵列RAID10"></a>实验一.磁盘阵列RAID10</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  <span class="comment">#代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别</span></span><br></pre></td></tr></table></figure>
+<p>格式化磁盘阵列为ext4格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md</span><br></pre></td></tr></table></figure></p>
+<p>#创建挂载点挂载磁盘阵列<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /RAID</span><br><span class="line">mount /dev/md0 /RAID</span><br></pre></td></tr></table></figure></p>
+<p>#查看磁盘阵列详细信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm -D /dev/md0 </span></span><br><span class="line">/dev/md0:</span><br><span class="line">        Version : 1.2</span><br><span class="line">  Creation Time : Wed Dec 26 03:22:26 2018</span><br><span class="line">     Raid Level : raid10</span><br><span class="line">     Array Size : 41910272 (39.97 GiB 42.92 GB)</span><br><span class="line">  Used Dev Size : 20955136 (19.98 GiB 21.46 GB)</span><br><span class="line">   Raid Devices : 4</span><br><span class="line">  Total Devices : 4</span><br><span class="line">    Persistence : Superblock is persistent</span><br><span class="line"></span><br><span class="line">    Update Time : Wed Dec 26 03:28:49 2018</span><br><span class="line">          State : active </span><br><span class="line"> Active Devices : 4</span><br><span class="line">Working Devices : 4</span><br><span class="line"> Failed Devices : 0</span><br><span class="line">  Spare Devices : 0</span><br><span class="line"></span><br><span class="line">         Layout : near=2</span><br><span class="line">     Chunk Size : 512K</span><br><span class="line"></span><br><span class="line">           Name : localhost.localdomain:0  (<span class="built_in">local</span> to host localhost.localdomain)</span><br><span class="line">           UUID : 0b9f3d0a:8b626b8e:131f0128:1fa28ac3</span><br><span class="line">         Events : 18</span><br><span class="line"></span><br><span class="line">    Number   Major   Minor   RaidDevice State</span><br><span class="line">       0       8       16        0      active sync <span class="built_in">set</span>-A   /dev/sdb</span><br><span class="line">       1       8       32        1      active sync <span class="built_in">set</span>-B   /dev/sdc</span><br><span class="line">       2       8       48        2      active sync <span class="built_in">set</span>-A   /dev/sdd</span><br><span class="line">       3       8       64        3      active sync <span class="built_in">set</span>-B   /dev/sde</span><br></pre></td></tr></table></figure></p>
+<p>#写入fstab文件使其永久生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/dev/md0 /RAID ext4 defaults 0 0"</span>&gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p>
+<h4 id="损坏磁盘阵列修复（假设-dev-sde硬盘出现故障）"><a href="#损坏磁盘阵列修复（假设-dev-sde硬盘出现故障）" class="headerlink" title="损坏磁盘阵列修复（假设/dev/sde硬盘出现故障）"></a>损坏磁盘阵列修复（假设/dev/sde硬盘出现故障）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm /dev/md0 -r /dev/sde      #移除故障硬盘</span></span><br><span class="line">mdadm: hot removed /dev/sde from /dev/md0</span><br><span class="line">[root@localhost ~]<span class="comment"># mdadm -D /dev/md0 </span></span><br><span class="line">/dev/md0:</span><br><span class="line">        Version : 1.2</span><br><span class="line">  Creation Time : Wed Dec 26 03:22:26 2018</span><br><span class="line">     Raid Level : raid10</span><br><span class="line">     Array Size : 41910272 (39.97 GiB 42.92 GB)</span><br><span class="line">  Used Dev Size : 20955136 (19.98 GiB 21.46 GB)</span><br><span class="line">   Raid Devices : 4</span><br><span class="line">  Total Devices : 3</span><br><span class="line">    Persistence : Superblock is persistent</span><br><span class="line"></span><br><span class="line">    Update Time : Wed Dec 26 03:36:44 2018</span><br><span class="line">          State : clean, degraded </span><br><span class="line"> Active Devices : 3</span><br><span class="line">Working Devices : 3</span><br><span class="line"> Failed Devices : 0</span><br><span class="line">  Spare Devices : 0</span><br><span class="line"></span><br><span class="line">         Layout : near=2</span><br><span class="line">     Chunk Size : 512K</span><br><span class="line"></span><br><span class="line">           Name : localhost.localdomain:0  (<span class="built_in">local</span> to host localhost.localdomain)</span><br><span class="line">           UUID : 0b9f3d0a:8b626b8e:131f0128:1fa28ac3</span><br><span class="line">         Events : 20</span><br><span class="line"></span><br><span class="line">    Number   Major   Minor   RaidDevice State</span><br><span class="line">       0       8       16        0      active sync <span class="built_in">set</span>-A   /dev/sdb</span><br><span class="line">       1       8       32        1      active sync <span class="built_in">set</span>-B   /dev/sdc</span><br><span class="line">       2       8       48        2      active sync <span class="built_in">set</span>-A   /dev/sdd</span><br><span class="line">       6       0        0        6      removed</span><br></pre></td></tr></table></figure>
+<p>#更换新硬盘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /RAID</span><br><span class="line">mdadm /dev/md0 -a /dev/sde</span><br><span class="line">mount /dev/md0 /RAID</span><br></pre></td></tr></table></figure></p>
+<h3 id="实验二-创建RAID5-备份盘"><a href="#实验二-创建RAID5-备份盘" class="headerlink" title="实验二.创建RAID5+备份盘"></a>实验二.创建RAID5+备份盘</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm -Cv /dev/md1 -n 3 -l 5 -x 1 /dev/sdf /dev/sdg /dev/sdh /dev/sdi # -x 1表示只有一块备份盘 其中/dev/sdi为备份盘</span></span><br><span class="line">mdadm: layout defaults to left-symmetric</span><br><span class="line">mdadm: layout defaults to left-symmetric</span><br><span class="line">mdadm: chunk size defaults to 512K</span><br><span class="line">mdadm: size <span class="built_in">set</span> to 20955136K</span><br><span class="line">mdadm: Defaulting to version 1.2 metadata</span><br><span class="line">mdadm: array /dev/md1 started.</span><br></pre></td></tr></table></figure>
+<p>#将磁盘阵列格式化为ext4格式并挂载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md1</span><br><span class="line">mkdir /RAID5</span><br><span class="line">mount /dev/md1 /RAID5</span><br></pre></td></tr></table></figure></p>
+<p>#测试磁盘阵列<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm -D /dev/md1  </span></span><br><span class="line">/dev/md1:</span><br><span class="line">        Version : 1.2</span><br><span class="line">  Creation Time : Wed Dec 26 03:47:57 2018</span><br><span class="line">     Raid Level : raid5</span><br><span class="line">     Array Size : 41910272 (39.97 GiB 42.92 GB)</span><br><span class="line">  Used Dev Size : 20955136 (19.98 GiB 21.46 GB)</span><br><span class="line">   Raid Devices : 3</span><br><span class="line">  Total Devices : 4</span><br><span class="line">    Persistence : Superblock is persistent</span><br><span class="line"></span><br><span class="line">    Update Time : Wed Dec 26 03:58:57 2018</span><br><span class="line">          State : clean </span><br><span class="line"> Active Devices : 3</span><br><span class="line">Working Devices : 4</span><br><span class="line"> Failed Devices : 0</span><br><span class="line">  Spare Devices : 1</span><br><span class="line"></span><br><span class="line">         Layout : left-symmetric</span><br><span class="line">     Chunk Size : 512K</span><br><span class="line"></span><br><span class="line">           Name : localhost.localdomain:1  (<span class="built_in">local</span> to host localhost.localdomain)</span><br><span class="line">           UUID : 4928d578:315c0579:7e5898c7:0ef21763</span><br><span class="line">         Events : 18</span><br><span class="line"></span><br><span class="line">    Number   Major   Minor   RaidDevice State</span><br><span class="line">       0       8       80        0      active sync   /dev/sdf</span><br><span class="line">       1       8       96        1      active sync   /dev/sdg</span><br><span class="line">       4       8      112        2      active sync   /dev/sdh</span><br><span class="line"></span><br><span class="line">       3       8      128        -      spare   /dev/sdi</span><br></pre></td></tr></table></figure></p>
+<h4 id="模拟-dev-sdh硬盘出现故障"><a href="#模拟-dev-sdh硬盘出现故障" class="headerlink" title="模拟/dev/sdh硬盘出现故障"></a>模拟/dev/sdh硬盘出现故障</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm /dev/md1 -f /dev/sdh</span><br></pre></td></tr></table></figure>
+<h4 id="查看磁盘阵列信息"><a href="#查看磁盘阵列信息" class="headerlink" title="查看磁盘阵列信息"></a>查看磁盘阵列信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm -D /dev/md1</span></span><br><span class="line">/dev/md1:</span><br><span class="line">        Version : 1.2</span><br><span class="line">  Creation Time : Wed Dec 26 03:47:57 2018</span><br><span class="line">     Raid Level : raid5</span><br><span class="line">     Array Size : 41910272 (39.97 GiB 42.92 GB)</span><br><span class="line">  Used Dev Size : 20955136 (19.98 GiB 21.46 GB)</span><br><span class="line">   Raid Devices : 3</span><br><span class="line">  Total Devices : 4</span><br><span class="line">    Persistence : Superblock is persistent</span><br><span class="line"></span><br><span class="line">    Update Time : Wed Dec 26 04:04:48 2018</span><br><span class="line">          State : clean, degraded, recovering </span><br><span class="line"> Active Devices : 2</span><br><span class="line">Working Devices : 3</span><br><span class="line"> Failed Devices : 1</span><br><span class="line">  Spare Devices : 1</span><br><span class="line"></span><br><span class="line">         Layout : left-symmetric</span><br><span class="line">     Chunk Size : 512K</span><br><span class="line"></span><br><span class="line"> Rebuild Status : 74% complete</span><br><span class="line"></span><br><span class="line">           Name : localhost.localdomain:1  (<span class="built_in">local</span> to host localhost.localdomain)</span><br><span class="line">           UUID : 4928d578:315c0579:7e5898c7:0ef21763</span><br><span class="line">         Events : 31</span><br><span class="line"></span><br><span class="line">    Number   Major   Minor   RaidDevice State</span><br><span class="line">       0       8       80        0      active sync   /dev/sdf</span><br><span class="line">       1       8       96        1      active sync   /dev/sdg</span><br><span class="line">       3       8      128        2      spare rebuilding   /dev/sdi</span><br><span class="line"></span><br><span class="line">       4       8      112        -      faulty   /dev/sdh</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -471,310 +485,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/npm设置淘宝代理/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoldiot">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/25/npm设置淘宝代理/" class="post-title-link" itemprop="url">npm设置淘宝代理</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-25 14:03:49 / Modified: 14:33:31" itemprop="dateCreated datePublished" datetime="2018-12-25T14:03:49+08:00">2018-12-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/RAID/" rel="tag"># RAID</a>
           
-            
+            <a href="/tags/磁盘阵列/" rel="tag"># 磁盘阵列</a>
           
-
+            <a href="/tags/数据安全/" rel="tag"># 数据安全</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h4 id="淘宝npm官网"><a href="#淘宝npm官网" class="headerlink" title="淘宝npm官网"></a><a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm官网</a></h4>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/25/npm设置淘宝代理/#more" rel="contents">
-                Read more &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/npm设置淘宝代理/" rel="next" title="npm设置淘宝代理">
+                <i class="fa fa-chevron-left"></i> npm设置淘宝代理
               </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/hexo切换next主题/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoldiot">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/25/hexo切换next主题/" class="post-title-link" itemprop="url">hexo切换next主题</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-25 12:07:38 / Modified: 14:19:54" itemprop="dateCreated datePublished" datetime="2018-12-25T12:07:38+08:00">2018-12-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h4 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h4>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/25/hexo切换next主题/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -784,318 +528,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoldiot">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/24/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-24 20:22:38" itemprop="dateCreated datePublished" datetime="2018-12-24T20:22:38+08:00">2018-12-24</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/24/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/centos部署hexo-github-next主题博客/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aoldiot">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/24/centos部署hexo-github-next主题博客/" class="post-title-link" itemprop="url">centos部署hexo+github+next主题博客</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-24 19:12:43" itemprop="dateCreated datePublished" datetime="2018-12-24T19:12:43+08:00">2018-12-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-25 14:21:00" itemprop="dateModified" datetime="2018-12-25T14:21:00+08:00">2018-12-25</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/24/centos部署hexo-github-next主题博客/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1116,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1194,6 +644,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验环境"><span class="nav-number">1.</span> <span class="nav-text">实验环境</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#实验一-磁盘阵列RAID10"><span class="nav-number"></span> <span class="nav-text">实验一.磁盘阵列RAID10</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#损坏磁盘阵列修复（假设-dev-sde硬盘出现故障）"><span class="nav-number">1.</span> <span class="nav-text">损坏磁盘阵列修复（假设/dev/sde硬盘出现故障）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验二-创建RAID5-备份盘"><span class="nav-number"></span> <span class="nav-text">实验二.创建RAID5+备份盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟-dev-sdh硬盘出现故障"><span class="nav-number">1.</span> <span class="nav-text">模拟/dev/sdh硬盘出现故障</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看磁盘阵列信息"><span class="nav-number">2.</span> <span class="nav-text">查看磁盘阵列信息</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1334,6 +800,10 @@
   
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
