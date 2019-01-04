@@ -104,18 +104,18 @@
 
 
 
-  <meta name="description" content="部署逻辑卷">
+  <meta name="description" content="部署逻辑卷1.添加两块硬盘，建立物理卷123[root@localhost ~]# pvcreate /dev/sdb /dev/sdc  Physical volume &quot;/dev/sdb&quot; successfully created  Physical volume &quot;/dev/sdc&quot; successfully created">
 <meta name="keywords" content="LVM,逻辑卷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LVM逻辑卷">
 <meta property="og:url" content="http://yoursite.com/2019/01/04/LVM逻辑卷/index.html">
 <meta property="og:site_name" content="Aoldiot">
-<meta property="og:description" content="部署逻辑卷">
+<meta property="og:description" content="部署逻辑卷1.添加两块硬盘，建立物理卷123[root@localhost ~]# pvcreate /dev/sdb /dev/sdc  Physical volume &quot;/dev/sdb&quot; successfully created  Physical volume &quot;/dev/sdc&quot; successfully created">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-04T07:24:50.496Z">
+<meta property="og:updated_time" content="2019-01-04T07:28:58.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LVM逻辑卷">
-<meta name="twitter:description" content="部署逻辑卷">
+<meta name="twitter:description" content="部署逻辑卷1.添加两块硬盘，建立物理卷123[root@localhost ~]# pvcreate /dev/sdb /dev/sdc  Physical volume &quot;/dev/sdb&quot; successfully created  Physical volume &quot;/dev/sdc&quot; successfully created">
 
 
 
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="Created: 2019-01-04 15:20:25 / Modified: 15:24:50" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:25+08:00">2019-01-04</time>
+              <time title="Created: 2019-01-04 15:20:25 / Modified: 15:28:58" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:25+08:00">2019-01-04</time>
             
 
             
@@ -448,8 +448,8 @@
       
 
       
-        <h3 id="部署逻辑卷"><a href="#部署逻辑卷" class="headerlink" title="部署逻辑卷"></a>部署逻辑卷</h3><a id="more"></a>
-<p>1.添加两块硬盘，建立物理卷<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pvcreate /dev/sdb /dev/sdc</span></span><br><span class="line">  Physical volume <span class="string">"/dev/sdb"</span> successfully created</span><br><span class="line">  Physical volume <span class="string">"/dev/sdc"</span> successfully created</span><br></pre></td></tr></table></figure></p>
+        <h3 id="部署逻辑卷"><a href="#部署逻辑卷" class="headerlink" title="部署逻辑卷"></a>部署逻辑卷</h3><p>1.添加两块硬盘，建立物理卷<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pvcreate /dev/sdb /dev/sdc</span></span><br><span class="line">  Physical volume <span class="string">"/dev/sdb"</span> successfully created</span><br><span class="line">  Physical volume <span class="string">"/dev/sdc"</span> successfully created</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>2.创建卷组 storage ，并将sdb，sdc加入到卷组stroage<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vgcreate storage /dev/sdb /dev/sdc</span></span><br><span class="line">  Volume group <span class="string">"storage"</span> successfully created</span><br></pre></td></tr></table></figure></p>
 <p>3.查看卷组状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vgdisplay </span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               storage</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  1</span><br><span class="line">  VG Access             <span class="built_in">read</span>/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                0</span><br><span class="line">  Open LV               0</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               39.99 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              10238</span><br><span class="line">  Alloc PE / Size       0 / 0   </span><br><span class="line">  Free  PE / Size       10238 / 39.99 GiB</span><br><span class="line">  VG UUID               Z9dr3u-7oni-yBLE-rfS9-xJ9g-p2aQ-s1VCUk</span><br></pre></td></tr></table></figure></p>
 <p>4.切割一个约为150MB的逻辑卷设备</p>

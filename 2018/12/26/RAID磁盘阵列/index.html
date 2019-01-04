@@ -104,19 +104,19 @@
 
 
 
-  <meta name="description" content="实验环境">
+  <meta name="description" content="实验环境 实验一.磁盘阵列RAID101mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  #代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别 格式化磁盘阵列为ext4格式1mkfs.ext4 /dev/md">
 <meta name="keywords" content="RAID,磁盘阵列,数据安全,学习记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RAID磁盘阵列">
 <meta property="og:url" content="http://yoursite.com/2018/12/26/RAID磁盘阵列/index.html">
 <meta property="og:site_name" content="Aoldiot">
-<meta property="og:description" content="实验环境">
+<meta property="og:description" content="实验环境 实验一.磁盘阵列RAID101mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  #代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别 格式化磁盘阵列为ext4格式1mkfs.ext4 /dev/md">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/RAID.png">
-<meta property="og:updated_time" content="2018-12-26T12:45:57.651Z">
+<meta property="og:updated_time" content="2019-01-04T07:31:36.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RAID磁盘阵列">
-<meta name="twitter:description" content="实验环境">
+<meta name="twitter:description" content="实验环境 实验一.磁盘阵列RAID101mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  #代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别 格式化磁盘阵列为ext4格式1mkfs.ext4 /dev/md">
 <meta name="twitter:image" content="http://yoursite.com/img/RAID.png">
 
 
@@ -405,12 +405,24 @@
                 
               
 
-              <time title="Created: 2018-12-26 20:25:46 / Modified: 20:45:57" itemprop="dateCreated datePublished" datetime="2018-12-26T20:25:46+08:00">2018-12-26</time>
+              <time title="Created: 2018-12-26 20:25:46" itemprop="dateCreated datePublished" datetime="2018-12-26T20:25:46+08:00">2018-12-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-04 15:31:36" itemprop="dateModified" datetime="2019-01-04T15:31:36+08:00">2019-01-04</time>
               
             
           </span>
@@ -450,10 +462,10 @@
       
 
       
-        <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><a id="more"></a>
-<p><img src="/img/RAID.png" alt=""></p>
+        <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><p><img src="/img/RAID.png" alt=""></p>
 <h3 id="实验一-磁盘阵列RAID10"><a href="#实验一-磁盘阵列RAID10" class="headerlink" title="实验一.磁盘阵列RAID10"></a>实验一.磁盘阵列RAID10</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  <span class="comment">#代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别</span></span><br></pre></td></tr></table></figure>
 <p>格式化磁盘阵列为ext4格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>#创建挂载点挂载磁盘阵列<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /RAID</span><br><span class="line">mount /dev/md0 /RAID</span><br></pre></td></tr></table></figure></p>
 <p>#查看磁盘阵列详细信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mdadm -D /dev/md0 </span></span><br><span class="line">/dev/md0:</span><br><span class="line">        Version : 1.2</span><br><span class="line">  Creation Time : Wed Dec 26 03:22:26 2018</span><br><span class="line">     Raid Level : raid10</span><br><span class="line">     Array Size : 41910272 (39.97 GiB 42.92 GB)</span><br><span class="line">  Used Dev Size : 20955136 (19.98 GiB 21.46 GB)</span><br><span class="line">   Raid Devices : 4</span><br><span class="line">  Total Devices : 4</span><br><span class="line">    Persistence : Superblock is persistent</span><br><span class="line"></span><br><span class="line">    Update Time : Wed Dec 26 03:28:49 2018</span><br><span class="line">          State : active </span><br><span class="line"> Active Devices : 4</span><br><span class="line">Working Devices : 4</span><br><span class="line"> Failed Devices : 0</span><br><span class="line">  Spare Devices : 0</span><br><span class="line"></span><br><span class="line">         Layout : near=2</span><br><span class="line">     Chunk Size : 512K</span><br><span class="line"></span><br><span class="line">           Name : localhost.localdomain:0  (<span class="built_in">local</span> to host localhost.localdomain)</span><br><span class="line">           UUID : 0b9f3d0a:8b626b8e:131f0128:1fa28ac3</span><br><span class="line">         Events : 18</span><br><span class="line"></span><br><span class="line">    Number   Major   Minor   RaidDevice State</span><br><span class="line">       0       8       16        0      active sync <span class="built_in">set</span>-A   /dev/sdb</span><br><span class="line">       1       8       32        1      active sync <span class="built_in">set</span>-B   /dev/sdc</span><br><span class="line">       2       8       48        2      active sync <span class="built_in">set</span>-A   /dev/sdd</span><br><span class="line">       3       8       64        3      active sync <span class="built_in">set</span>-B   /dev/sde</span><br></pre></td></tr></table></figure></p>
 <p>#写入fstab文件使其永久生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/dev/md0 /RAID ext4 defaults 0 0"</span>&gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></p>

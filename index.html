@@ -401,7 +401,7 @@
                 
               
 
-              <time title="Created: 2019-01-04 15:20:49 / Modified: 15:25:13" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:49+08:00">2019-01-04</time>
+              <time title="Created: 2019-01-04 15:20:49 / Modified: 15:34:34" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:49+08:00">2019-01-04</time>
             
 
             
@@ -440,16 +440,10 @@
 
       
         
-          <h3 id="fdisk创建逻辑分区"><a href="#fdisk创建逻辑分区" class="headerlink" title="fdisk创建逻辑分区"></a>fdisk创建逻辑分区</h3>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/04/fdisk创建逻辑卷/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
+            <h3 id="fdisk创建逻辑分区"><a href="#fdisk创建逻辑分区" class="headerlink" title="fdisk创建逻辑分区"></a>fdisk创建逻辑分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># fdisk /dev/sdd </span></span><br><span class="line">Welcome to fdisk (util-linux 2.23.2).</span><br><span class="line"></span><br><span class="line">Changes will remain <span class="keyword">in</span> memory only, until you decide to write them.</span><br><span class="line">Be careful before using the write <span class="built_in">command</span>.</span><br><span class="line"></span><br><span class="line">Device does not contain a recognized partition table</span><br><span class="line">Building a new DOS disklabel with disk identifier 0x17a3940f.</span><br><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): n                        <span class="comment">#新建分区</span></span><br><span class="line">Partition <span class="built_in">type</span>:</span><br><span class="line">   p   primary (0 primary, 0 extended, 4 free) <span class="comment">#主分区</span></span><br><span class="line">   e   extended                                <span class="comment">#扩展分区</span></span><br><span class="line">Select (default p): e                          <span class="comment">#选择逻辑分区</span></span><br><span class="line">Partition number (1-4, default 1):             <span class="comment">#分区编码，主分区及扩展分区编码为1-4,逻辑分区为5以后</span></span><br><span class="line">First sector (2048-41943039, default 2048): </span><br><span class="line">Using default value 2048</span><br><span class="line">Last sector, +sectors or +size&#123;K,M,G&#125; (2048-41943039, default 41943039): +2G  </span><br><span class="line">Partition 1 of <span class="built_in">type</span> Extended and of size 2 GiB is <span class="built_in">set</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): n                        <span class="comment">#在扩展分区中创建逻辑分区</span></span><br><span class="line">Partition <span class="built_in">type</span>:</span><br><span class="line">   p   primary (0 primary, 1 extended, 3 free)</span><br><span class="line">   l   logical (numbered from 5)</span><br><span class="line">Select (default p): l                          <span class="comment">#选择逻辑卷</span></span><br><span class="line">Adding logical partition 5</span><br><span class="line">First sector (4096-4196351, default 4096): </span><br><span class="line">Using default value 4096</span><br><span class="line">Last sector, +sectors or +size&#123;K,M,G&#125; (4096-4196351, default 4196351): +1G</span><br><span class="line">Partition 5 of <span class="built_in">type</span> Linux and of size 1 GiB is <span class="built_in">set</span></span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): p</span><br><span class="line"></span><br><span class="line">Disk /dev/sdd: 21.5 GB, 21474836480 bytes, 41943040 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x17a3940f</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/sdd1            2048     4196351     2097152    5  Extended</span><br><span class="line">/dev/sdd5            4096     2101247     1048576   83  Linux</span><br><span class="line"></span><br><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>): w</span><br><span class="line">The partition table has been altered!</span><br><span class="line"></span><br><span class="line">Calling ioctl() to re-read partition table.</span><br><span class="line">Syncing disks.   </span><br><span class="line">[root@localhost ~]<span class="comment"># mkfs.ext4 /dev/sdd5</span></span><br><span class="line">mke2fs 1.42.9 (28-Dec-2013)</span><br><span class="line">Filesystem label=</span><br><span class="line">OS <span class="built_in">type</span>: Linux</span><br><span class="line">Block size=4096 (<span class="built_in">log</span>=2)</span><br><span class="line">Fragment size=4096 (<span class="built_in">log</span>=2)</span><br><span class="line">Stride=0 blocks, Stripe width=0 blocks</span><br><span class="line">65536 inodes, 262144 blocks</span><br><span class="line">13107 blocks (5.00%) reserved <span class="keyword">for</span> the super user</span><br><span class="line">First data block=0</span><br><span class="line">Maximum filesystem blocks=268435456</span><br><span class="line">8 block groups</span><br><span class="line">32768 blocks per group, 32768 fragments per group</span><br><span class="line">8192 inodes per group</span><br><span class="line">Superblock backups stored on blocks: </span><br><span class="line">	32768, 98304, 163840, 229376</span><br><span class="line"></span><br><span class="line">Allocating group tables: <span class="keyword">done</span>                            </span><br><span class="line">Writing inode tables: <span class="keyword">done</span>                            </span><br><span class="line">Creating journal (8192 blocks): <span class="keyword">done</span></span><br><span class="line">Writing superblocks and filesystem accounting information: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># mount /dev/sdd5 /root/sky</span></span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -549,7 +543,7 @@
                 
               
 
-              <time title="Created: 2019-01-04 15:20:25 / Modified: 15:24:50" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:25+08:00">2019-01-04</time>
+              <time title="Created: 2019-01-04 15:20:25 / Modified: 15:28:58" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:25+08:00">2019-01-04</time>
             
 
             
@@ -588,7 +582,7 @@
 
       
         
-          <h3 id="部署逻辑卷"><a href="#部署逻辑卷" class="headerlink" title="部署逻辑卷"></a>部署逻辑卷</h3>
+          <h3 id="部署逻辑卷"><a href="#部署逻辑卷" class="headerlink" title="部署逻辑卷"></a>部署逻辑卷</h3><p>1.添加两块硬盘，建立物理卷<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pvcreate /dev/sdb /dev/sdc</span></span><br><span class="line">  Physical volume <span class="string">"/dev/sdb"</span> successfully created</span><br><span class="line">  Physical volume <span class="string">"/dev/sdc"</span> successfully created</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -697,12 +691,24 @@
                 
               
 
-              <time title="Created: 2018-12-26 20:25:46 / Modified: 20:45:57" itemprop="dateCreated datePublished" datetime="2018-12-26T20:25:46+08:00">2018-12-26</time>
+              <time title="Created: 2018-12-26 20:25:46" itemprop="dateCreated datePublished" datetime="2018-12-26T20:25:46+08:00">2018-12-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-04 15:31:36" itemprop="dateModified" datetime="2019-01-04T15:31:36+08:00">2019-01-04</time>
               
             
           </span>
@@ -736,7 +742,9 @@
 
       
         
-          <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4>
+          <h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><p><img src="/img/RAID.png" alt=""></p>
+<h3 id="实验一-磁盘阵列RAID10"><a href="#实验一-磁盘阵列RAID10" class="headerlink" title="实验一.磁盘阵列RAID10"></a>实验一.磁盘阵列RAID10</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde  <span class="comment">#代码解释 -C创建磁盘阵列 v显示过程 -a yes 自动创建设备文件 -n 设备数量 -l RAID级别</span></span><br></pre></td></tr></table></figure>
+<p>格式化磁盘阵列为ext4格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -845,12 +853,24 @@
                 
               
 
-              <time title="Created: 2018-12-25 14:03:49 / Modified: 14:33:31" itemprop="dateCreated datePublished" datetime="2018-12-25T14:03:49+08:00">2018-12-25</time>
+              <time title="Created: 2018-12-25 14:03:49" itemprop="dateCreated datePublished" datetime="2018-12-25T14:03:49+08:00">2018-12-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-04 15:31:08" itemprop="dateModified" datetime="2019-01-04T15:31:08+08:00">2019-01-04</time>
               
             
           </span>
@@ -884,16 +904,16 @@
 
       
         
-          <h4 id="淘宝npm官网"><a href="#淘宝npm官网" class="headerlink" title="淘宝npm官网"></a><a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm官网</a></h4>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/25/npm设置淘宝代理/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
+            <h4 id="淘宝npm官网"><a href="#淘宝npm官网" class="headerlink" title="淘宝npm官网"></a><a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm官网</a></h4><ul>
+<li><p>原理更改npm源为淘宝源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用方法和npm一致，只需要将npm改为cnpm即可。</p>
+</li>
+</ul>
+
+          
         
       
     </div>
@@ -1010,7 +1030,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-26 20:37:50" itemprop="dateModified" datetime="2018-12-26T20:37:50+08:00">2018-12-26</time>
+                <time title="Modified: 2019-01-04 15:30:48" itemprop="dateModified" datetime="2019-01-04T15:30:48+08:00">2019-01-04</time>
               
             
           </span>
@@ -1044,7 +1064,15 @@
 
       
         
-          <h4 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h4>
+          <h4 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h4><ul>
+<li>安装hexo教程请点<a href="https://linuxv.github.io/2018/12/24/centos%E9%83%A8%E7%BD%B2hexo-github-next%E4%B8%BB%E9%A2%98%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">这里</a></li>
+<li>更多hexo主题请点<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这里</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" target="_blank" rel="noopener">Next主题中文文档</a></li>
+</ul>
+<h3 id="安装next主题"><a href="#安装next主题" class="headerlink" title="安装next主题"></a>安装next主题</h3><h4 id="1-克隆next主题"><a href="#1-克隆next主题" class="headerlink" title="1.克隆next主题"></a>1.克隆next主题</h4><ul>
+<li>进入hexo目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1314,7 +1342,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-25 14:21:00" itemprop="dateModified" datetime="2018-12-25T14:21:00+08:00">2018-12-25</time>
+                <time title="Modified: 2019-01-04 15:29:38" itemprop="dateModified" datetime="2019-01-04T15:29:38+08:00">2019-01-04</time>
               
             
           </span>
@@ -1348,7 +1376,12 @@
 
       
         
-          <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4>
+          <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>系统环境centos7</li>
+<li>用邮箱注册github帐号<h4 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h4></li>
+<li>下载<br>进入<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官网</a>找到最新版本，复制下载链接，下面以11.5.0版本为例<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v11.5.0/node-v11.5.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
