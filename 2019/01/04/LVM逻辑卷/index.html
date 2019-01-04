@@ -104,20 +104,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Aoldiot">
-<meta property="og:url" content="http://yoursite.com/tags/github/index.html">
+  <meta name="description" content="部署逻辑卷">
+<meta name="keywords" content="LVM,逻辑卷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LVM逻辑卷">
+<meta property="og:url" content="http://yoursite.com/2019/01/04/LVM逻辑卷/index.html">
 <meta property="og:site_name" content="Aoldiot">
+<meta property="og:description" content="部署逻辑卷">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-04T07:24:50.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aoldiot">
+<meta name="twitter:title" content="LVM逻辑卷">
+<meta name="twitter:description" content="部署逻辑卷">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/github/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/04/LVM逻辑卷/">
 
 
 
@@ -127,7 +132,7 @@
   };
 </script>
 
-  <title>Tag: github | Aoldiot</title>
+  <title>LVM逻辑卷 | Aoldiot</title>
   
 
 
@@ -175,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -230,7 +235,7 @@
         
         
           
-          <li class="menu-item menu-item-标签 menu-item-active">
+          <li class="menu-item menu-item-标签">
 
     
     
@@ -294,25 +299,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -358,56 +344,205 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>github<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/LVM逻辑卷/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sky">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aoldiot">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/24/centos部署hexo-github-next主题博客/" itemprop="url">
-              
-                <span itemprop="name">centos部署hexo+github+next主题博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">LVM逻辑卷
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-24T19:12:43+08:00" content="2018-12-24">
-          12-24
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-04 15:20:25 / Modified: 15:24:50" itemprop="dateCreated datePublished" datetime="2019-01-04T15:20:25+08:00">2019-01-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="部署逻辑卷"><a href="#部署逻辑卷" class="headerlink" title="部署逻辑卷"></a>部署逻辑卷</h3><a id="more"></a>
+<p>1.添加两块硬盘，建立物理卷<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pvcreate /dev/sdb /dev/sdc</span></span><br><span class="line">  Physical volume <span class="string">"/dev/sdb"</span> successfully created</span><br><span class="line">  Physical volume <span class="string">"/dev/sdc"</span> successfully created</span><br></pre></td></tr></table></figure></p>
+<p>2.创建卷组 storage ，并将sdb，sdc加入到卷组stroage<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vgcreate storage /dev/sdb /dev/sdc</span></span><br><span class="line">  Volume group <span class="string">"storage"</span> successfully created</span><br></pre></td></tr></table></figure></p>
+<p>3.查看卷组状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vgdisplay </span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               storage</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  1</span><br><span class="line">  VG Access             <span class="built_in">read</span>/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                0</span><br><span class="line">  Open LV               0</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               39.99 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              10238</span><br><span class="line">  Alloc PE / Size       0 / 0   </span><br><span class="line">  Free  PE / Size       10238 / 39.99 GiB</span><br><span class="line">  VG UUID               Z9dr3u-7oni-yBLE-rfS9-xJ9g-p2aQ-s1VCUk</span><br></pre></td></tr></table></figure></p>
+<p>4.切割一个约为150MB的逻辑卷设备</p>
+<p>#对逻辑卷切割有两种计量单位。<br><em>使用-L参数 -L 150M 生成150 MB
+</em>使用-l参数 -l 37  生成37*4=148MB（每个单元大小默认为4MB，按单元为计量单位）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># lvcreate -n vo -L 150M storage</span></span><br></pre></td></tr></table></figure></p>
+<p>5.格式化逻辑卷，并挂载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mkfs.ext4 /dev/storage/vo</span></span><br><span class="line">[root@localhost ~]<span class="comment"># mkdir /LVM</span></span><br><span class="line">[root@localhost ~]<span class="comment"># mount /dev/storage/vo /LVM/</span></span><br></pre></td></tr></table></figure></p>
+<p>6.查看挂载状态，并写入配置文件，使其永久生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem              Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/sda3                18G  1.3G   17G   7% /</span><br><span class="line">devtmpfs                904M     0  904M   0% /dev</span><br><span class="line">tmpfs                   913M     0  913M   0% /dev/shm</span><br><span class="line">tmpfs                   913M  8.7M  904M   1% /run</span><br><span class="line">tmpfs                   913M     0  913M   0% /sys/fs/cgroup</span><br><span class="line">/dev/sda1               297M  113M  185M  38% /boot</span><br><span class="line">tmpfs                   183M     0  183M   0% /run/user/0</span><br><span class="line">/dev/mapper/storage-vo  144M  1.6M  132M   2% /LVM</span><br><span class="line">[root@localhost ~]<span class="comment"># echo "/dev/storage/vo /LVM/ ext4 defaults 0 0" &gt;&gt; /etc/fstab</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="扩容逻辑卷"><a href="#扩容逻辑卷" class="headerlink" title="扩容逻辑卷"></a>扩容逻辑卷</h3><p>1.取消挂载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># umount /LVM/</span></span><br></pre></td></tr></table></figure></p>
+<p>2.扩展逻辑卷vo至290MB<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># lvextend -L 290M /dev/storage/vo </span></span><br><span class="line">  Rounding size to boundary between physical extents: 292.00 MiB</span><br><span class="line">  Size of logical volume storage/vo changed from 152.00 MiB (38 extents) to 292.00 MiB (73 extents).</span><br><span class="line">  Logical volume vo successfully resized.</span><br></pre></td></tr></table></figure></p>
+<p>3.检查硬盘完整性，并重置硬盘容量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># e2fsck -f /dev/storage/vo </span></span><br><span class="line">e2fsck 1.42.9 (28-Dec-2013)</span><br><span class="line">Pass 1: Checking inodes, blocks, and sizes</span><br><span class="line">Pass 2: Checking directory structure</span><br><span class="line">Pass 3: Checking directory connectivity</span><br><span class="line">Pass 4: Checking reference counts</span><br><span class="line">Pass 5: Checking group summary information</span><br><span class="line">/dev/storage/vo: 11/38912 files (0.0% non-contiguous), 10567/155648 blocks</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># resize2fs /dev/storage/vo </span></span><br><span class="line">resize2fs 1.42.9 (28-Dec-2013)</span><br><span class="line">Resizing the filesystem on /dev/storage/vo to 299008 (1k) blocks.</span><br><span class="line">The filesystem on /dev/storage/vo is now 299008 blocks long.</span><br></pre></td></tr></table></figure></p>
+<p>4.重新挂载，并查看挂载状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mount /dev/storage/vo /LVM/</span></span><br><span class="line">[root@localhost ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem              Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/sda3                18G  1.3G   17G   7% /</span><br><span class="line">devtmpfs                904M     0  904M   0% /dev</span><br><span class="line">tmpfs                   913M  8.7M  904M   1% /run</span><br><span class="line">tmpfs                   913M     0  913M   0% /sys/fs/cgroup</span><br><span class="line">/dev/mapper/storage-vo  279M  2.1M  259M   1% /LVM</span><br></pre></td></tr></table></figure></p>
+<h3 id="缩小逻辑卷"><a href="#缩小逻辑卷" class="headerlink" title="缩小逻辑卷"></a>缩小逻辑卷</h3><p>1.取消挂载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># umount /LVM/</span></span><br></pre></td></tr></table></figure></p>
+<p>2.检查文件系统完整性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># e2fsck -f /dev/storage/vo </span></span><br><span class="line">e2fsck 1.42.9 (28-Dec-2013)</span><br><span class="line">Pass 1: Checking inodes, blocks, and sizes</span><br><span class="line">Pass 2: Checking directory structure</span><br><span class="line">Pass 3: Checking directory connectivity</span><br><span class="line">Pass 4: Checking reference counts</span><br><span class="line">Pass 5: Checking group summary information</span><br><span class="line">/dev/storage/vo: 11/75776 files (0.0% non-contiguous), 15729/299008 blocks</span><br></pre></td></tr></table></figure></p>
+<p>3.把逻辑卷vo容量减小 到 120MB<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># resize2fs /dev/storage/vo 120M</span></span><br><span class="line">resize2fs 1.42.9 (28-Dec-2013)</span><br><span class="line">Resizing the filesystem on /dev/storage/vo to 122880 (1k) blocks.</span><br><span class="line">The filesystem on /dev/storage/vo is now 122880 blocks long.</span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># lvreduce -L 120M /dev/storage/vo </span></span><br><span class="line">  WARNING: Reducing active logical volume to 120.00 MiB</span><br><span class="line">  THIS MAY DESTROY YOUR DATA (filesystem etc.)</span><br><span class="line">Do you really want to reduce vo? [y/n]: y</span><br><span class="line">  Size of logical volume storage/vo changed from 292.00 MiB (73 extents) to 120.00 MiB (30 extents).</span><br><span class="line">  Logical volume vo successfully resized.</span><br></pre></td></tr></table></figure></p>
+<p>4.重新挂载文件系统并查看系统状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># mount /dev/storage/vo /LVM/</span></span><br><span class="line">[root@localhost ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem              Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/sda3                18G  1.3G   17G   7% /</span><br><span class="line">devtmpfs                904M     0  904M   0% /dev</span><br><span class="line">tmpfs                   913M  8.7M  904M   1% /run</span><br><span class="line">tmpfs                   913M     0  913M   0% /sys/fs/cgroup</span><br><span class="line">/dev/mapper/storage-vo  113M  1.6M  103M   2% /LVM</span><br></pre></td></tr></table></figure></p>
+<h3 id="逻辑卷快照"><a href="#逻辑卷快照" class="headerlink" title="逻辑卷快照"></a>逻辑卷快照</h3><p>#快照卷容量必须等于逻辑卷的已使用容量</p>
+<p>#快照卷仅一次有效，一旦执行还原操作后会被立即删除<br>1.查看卷组信息，查看Alloc PE / Size 已使用容量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgdisplay</span><br></pre></td></tr></table></figure></p>
+<p>后面再写吧</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LVM/" rel="tag"># LVM</a>
+          
+            <a href="/tags/逻辑卷/" rel="tag"># 逻辑卷</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/26/RAID磁盘阵列/" rel="next" title="RAID磁盘阵列">
+                <i class="fa fa-chevron-left"></i> RAID磁盘阵列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/04/fdisk创建逻辑卷/" rel="prev" title="fdisk创建逻辑卷">
+                fdisk创建逻辑卷 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -428,8 +563,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -516,6 +660,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署逻辑卷"><span class="nav-number">1.</span> <span class="nav-text">部署逻辑卷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容逻辑卷"><span class="nav-number">2.</span> <span class="nav-text">扩容逻辑卷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩小逻辑卷"><span class="nav-number">3.</span> <span class="nav-text">缩小逻辑卷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑卷快照"><span class="nav-number">4.</span> <span class="nav-text">逻辑卷快照</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -656,6 +816,10 @@
   
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
